@@ -1,0 +1,197 @@
+.dash-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dash-header {
+  margin-bottom: 2rem;
+}
+
+.dash-title {
+  font-size: 1.8rem;
+  color: #1a1a2e;
+  margin: 0 0 0.3rem;
+}
+
+.dash-welcome {
+  color: #666;
+  margin: 0;
+}
+
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.dash-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.dash-stat-won {
+  background: #1a1a2e;
+  color: white;
+}
+
+.dash-stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e94560;
+  margin: 0 0 0.3rem;
+}
+
+.dash-stat-won .dash-stat-number { color: #fbbf24; }
+
+.dash-stat-label {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.dash-stat-won .dash-stat-label { color: #a0a0b0; }
+
+.dash-section {
+  margin-bottom: 2.5rem;
+}
+
+.dash-section-title {
+  font-size: 1.2rem;
+  color: #1a1a2e;
+  margin: 0 0 1rem;
+}
+
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.dash-bid-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.dash-bid-card:hover { transform: translateY(-2px); }
+
+.dash-bid-won { border-left: 4px solid #fbbf24; }
+
+.dash-bid-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.dash-bid-title {
+  font-size: 1rem;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.dash-bid-winning {
+  color: #888;
+  font-size: 0.85rem;
+  margin: 0 0 0.2rem;
+}
+
+.dash-bid-amount {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e94560;
+  margin: 0;
+}
+
+.dash-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+
+.dash-active   { background-color: #22c55e; }
+.dash-upcoming { background-color: #f59e0b; }
+.dash-ended    { background-color: #ef4444; }
+
+.dash-loading {
+  color: #888;
+  text-align: center;
+  padding: 2rem;
+}
+
+.dash-empty {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 12px;
+  color: #666;
+}
+
+.dash-browse-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #e94560;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dash-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  overflow-x: auto;
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dash-table th {
+  background: #f8f9fa;
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+.dash-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #f0f2f5;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.dash-table tr:last-child td { border-bottom: none; }
+.dash-table tr:hover td { background: #fafafa; }
+
+.dash-td-title { font-weight: 600; color: #1a1a2e; }
+.dash-td-bid   { font-weight: bold; color: #e94560; }
+
+.dash-view-link {
+  color: #e94560;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.dash-view-link:hover { text-decoration: underline; }
