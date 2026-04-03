@@ -18,7 +18,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// ✅ Routes
 app.use('/api/auctions', auctionRoutes);
 
 // ✅ Create server AFTER app setup
@@ -28,13 +27,14 @@ const server = createServer(app);
 const io = new Server(server, {
   cors: {
     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-    methods: ['GET', 'POST']
+    methods: ['GET', 'POST'],
+    credentials: true
   }
 });
 
 auctionSocket(io);
 
-// ✅ DB + server start
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected");
