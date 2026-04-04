@@ -6,6 +6,7 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import auctionSocket from './socket/auctionSocket.js';
 import auctionRoutes from './routes/auctionRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 
 dotenv.config();
 
