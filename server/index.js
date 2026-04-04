@@ -10,27 +10,36 @@ import auctionRoutes from './routes/auctionRoutes.js';
 dotenv.config();
 
 const app = express();
+// Middleware FIRST
+const allowedOrigins = [
+  'http://localhost:5173',
+  process.env.FRONTEND_URL,
+].filter(Boolean)
 
-// ✅ Middleware FIRST
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   credentials: true
-}));
-app.use(express.json());
+}
 
-app.use('/api/auctions', auctionRoutes);
+app.use(cors(corsOptions))
+app.use(express.json())
 
-// ✅ Create server AFTER app setup
-const server = createServer(app);
+app.use('/api/auth', authRoutes)
+app.use('/api/auctions', auctionRoutes)
 
-// ✅ Socket
+// Create server AFTER app setup
+const server = createServer(app)
+
+// Socket
 const io = new Server(server, {
-  cors: {
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-    methods: ['GET', 'POST'],
-    credentials: true
-  }
-});
+  cors: corsOptions
+})
 
 auctionSocket(io);
 
